@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EMFLEX | Move With Power</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0a0f1f;
+color:white;
+}
+
+header{
+text-align:center;
+padding:40px;
+background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
+box-shadow:0 0 20px cyan;
+}
+
+header img{
+width:150px;
+}
+
+nav{
+text-align:center;
+background:#111;
+padding:15px;
+}
+
+nav a{
+color:cyan;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:white;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+background:radial-gradient(circle,#0f2027,#000);
+}
+
+.hero h1{
+font-size:48px;
+color:cyan;
+text-shadow:0 0 15px cyan;
+}
+
+section{
+padding:50px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px cyan;
+margin:20px 0;
+}
+
+.generator{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+margin-top:40px;
+}
+
+.coil{
+width:120px;
+height:120px;
+border:6px solid orange;
+border-radius:50%;
+position:relative;
+}
+
+.magnet{
+width:40px;
+height:80px;
+background:red;
+animation:moveMagnet 2s infinite alternate;
+}
+
+@keyframes moveMagnet{
+from{transform:translateX(-80px);}
+to{transform:translateX(80px);}
+}
+
+.electricity{
+color:cyan;
+font-size:28px;
+animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 5px cyan;}
+to{text-shadow:0 0 20px cyan;}
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="emflex-logo.png">
+
+<h1>EMFLEX</h1>
+<p>Move With Power ⚡</p>
+
+</header>
+
+<nav>
+
+<a href="#about">About</a>
+<a href="#features">Features</a>
+<a href="#science">Science</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>Charge Gadgets While You Move</h1>
+
+<p>
+EMFLEX is a belt bag that converts motion into electricity using
+electromagnetic induction.
+</p>
+
+</section>
+
+
+<section id="about">
+
+<div class="card">
+
+<h2>About EMFLEX</h2>
+
+<p>
+EMFLEX is a wearable power generator designed for people on the move.
+As the user walks or runs, motion inside the bag moves magnets through
+coils of wire. This movement generates electricity that can charge
+small devices such as phones, earbuds, and smart watches.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section id="features">
+
+<div class="card">
+
+<h2>Key Features</h2>
+
+<ul>
+<li>⚡ Motion powered electricity</li>
+<li>⚡ Portable gadget charging</li>
+<li>⚡ Lightweight belt bag design</li>
+<li>⚡ Uses electromagnetic induction</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+<section id="science">
+
+<div class="card">
+
+<h2>Faraday's Law Visual Explanation</h2>
+
+<p>
+Faraday's Law states that moving a magnet through a coil of wire
+produces an electric current.
+</p>
+
+<div class="generator">
+
+<div class="magnet"></div>
+
+<div class="coil"></div>
+
+<div class="electricity">⚡</div>
+
+</div>
+
+<p style="text-align:center;margin-top:20px;">
+
+Magnet movement → Magnetic field change → Electricity generated
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 EMFLEX | Move With Power</p>
+
+</footer>
+
+</body>
+</html>
