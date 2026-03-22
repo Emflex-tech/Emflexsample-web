@@ -9,9 +9,7 @@
 <style>
 
 /* GLOBAL */
-html{
-scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
 margin:0;
@@ -45,6 +43,15 @@ text-decoration:none;
 font-weight:bold;
 }
 
+/* CART BADGE */
+#cartCount{
+background:red;
+padding:3px 8px;
+border-radius:50%;
+font-size:12px;
+margin-left:5px;
+}
+
 /* HERO */
 .hero{
 text-align:center;
@@ -72,7 +79,6 @@ margin-bottom:20px;
 transition:0.4s;
 }
 
-/* HOVER */
 .card:hover{
 transform:translateY(-8px);
 }
@@ -101,7 +107,35 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-/* FADE-IN ANIMATION */
+/* STORE IMAGE */
+.store img{
+width:100%;
+border-radius:10px;
+}
+
+/* BUTTON */
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#00c6ff;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#0072ff;
+}
+
+/* CART ITEMS */
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+}
+
+/* FADE-IN */
 .hidden{
 opacity:0;
 transform:translateY(40px);
@@ -113,7 +147,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* SCIENCE ANIMATION */
+/* SCIENCE */
 .generator{
 display:flex;
 justify-content:center;
@@ -171,7 +205,7 @@ padding:20px;
 <body>
 
 <header>
-<img src="emflex-logo.png.jpg">
+<img src="emflex-logo.png">
 <h1>EMFLEX</h1>
 <p>Move With Power ⚡</p>
 </header>
@@ -182,6 +216,8 @@ padding:20px;
 <a href="#gallery">Gallery</a>
 <a href="#science">Science</a>
 <a href="#team">Team</a>
+<a href="#store">Store</a>
+<a href="#cart">Cart 🛒 <span id="cartCount">0</span></a>
 </nav>
 
 <!-- HERO -->
@@ -206,122 +242,126 @@ using Faraday’s Law of Electromagnetic Induction.
 <!-- FEATURES -->
 <section id="features">
 <div class="container">
-
 <div class="grid">
-
 <div class="card hidden">
 <h3>Motion Powered</h3>
 <p>Generates electricity while walking or running.</p>
 </div>
-
 <div class="card hidden">
 <h3>Portable Charging</h3>
 <p>Charge gadgets anytime, anywhere.</p>
 </div>
-
 <div class="card hidden">
 <h3>Compact Design</h3>
 <p>Lightweight and easy to wear.</p>
 </div>
-
 </div>
-
 </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
 <div class="container">
-
 <div class="grid gallery">
-
 <img src="product1.jpg" class="hidden">
 <img src="product2.jpg" class="hidden">
 <img src="product3.jpg" class="hidden">
 <img src="product4.jpg" class="hidden">
-
 </div>
-
 </div>
 </section>
 
 <!-- SCIENCE -->
 <section id="science">
 <div class="container">
-
 <div class="card hidden">
-
 <h2>The Science Behind EMFLEX</h2>
-
-<p>
-When a magnet moves through a coil, it creates electricity.
-This is called electromagnetic induction.
-</p>
-
+<p>When a magnet moves through a coil, it creates electricity.</p>
 <div class="generator">
-
 <div class="magnet"></div>
 <div class="coil"></div>
 <div class="energy">⚡</div>
-
 </div>
-
-<p style="text-align:center;">
-Motion → Magnetic Change → Electricity
-</p>
-
 </div>
-
 </div>
 </section>
 
 <!-- TEAM -->
 <section id="team">
 <div class="container">
-
 <div class="grid">
-
 <div class="card hidden">
 <img src="member1.jpg">
 <h3>Your Name</h3>
 <p>Project Leader</p>
 </div>
-
-<div class="card hidden">
-<img src="member1.jpg">
-<h3>Your Name</h3>
-<p>Project Asst. Leader</p>
-</div>
-
 <div class="card hidden">
 <img src="member2.jpg">
 <h3>Member Name</h3>
 <p>Researcher</p>
 </div>
-
-<div class="card hidden">
-<img src="member2.jpg">
-<h3>Member Name</h3>
-<p>Researcher</p>
-</div>
-
 <div class="card hidden">
 <img src="member3.jpg">
 <h3>Member Name</h3>
 <p>Designer</p>
 </div>
-
-<div class="card hidden">
-<img src="member3.jpg">
-<h3>Member Name</h3>
-<p>Designer</p>
-</div>
-
 <div class="card hidden">
 <img src="member4.jpg">
 <h3>Member Name</h3>
 <p>Developer</p>
 </div>
+</div>
+</div>
+</section>
+
+<!-- STORE -->
+<section id="store">
+<div class="container">
+
+<div class="card hidden">
+<h2>EMFLEX Store</h2>
+</div>
+
+<div class="grid store">
+
+<div class="card hidden">
+<img src="product1.jpg">
+<h3>Standard</h3>
+<p>₱999</p>
+<button onclick="addToCart('Standard',999)">Add to Cart</button>
+</div>
+
+<div class="card hidden">
+<img src="product2.jpg">
+<h3>Pro</h3>
+<p>₱1499</p>
+<button onclick="addToCart('Pro',1499)">Add to Cart</button>
+</div>
+
+<div class="card hidden">
+<img src="product3.jpg">
+<h3>Ultra</h3>
+<p>₱1999</p>
+<button onclick="addToCart('Ultra',1999)">Add to Cart</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CART -->
+<section id="cart">
+<div class="container">
+
+<div class="card hidden">
+<h2>Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<h3 id="total">Total: ₱0</h3>
+
+<button onclick="checkout()">Checkout</button>
 
 </div>
 
@@ -342,8 +382,52 @@ entry.target.classList.add('show');
 }
 });
 });
-
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+/* CART SYSTEM */
+let cart = [];
+
+function addToCart(name, price){
+cart.push({name, price});
+updateCart();
+}
+
+function updateCart(){
+let cartItems = document.getElementById("cartItems");
+cartItems.innerHTML = "";
+
+let total = 0;
+
+cart.forEach((item, index)=>{
+total += item.price;
+
+cartItems.innerHTML += `
+<div class="cart-item">
+${item.name} - ₱${item.price}
+<button onclick="removeItem(${index})">X</button>
+</div>
+`;
+});
+
+document.getElementById("total").innerText = "Total: ₱" + total;
+document.getElementById("cartCount").innerText = cart.length;
+}
+
+function removeItem(index){
+cart.splice(index,1);
+updateCart();
+}
+
+function checkout(){
+if(cart.length === 0){
+alert("Cart is empty!");
+return;
+}
+
+alert("Order placed successfully! ⚡ (Demo only)");
+cart = [];
+updateCart();
+}
 
 </script>
 
